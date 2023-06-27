@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "190939375367",
+    "project_id": "billeteramovilapp",
+    "storage_bucket": "billeteramovilapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:190939375367:android:9dd6659531ca0bbc3387a2",
+        "android_client_info": {
+          "package_name": "com.example.billeteramovil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "190939375367-r632se0ql401cjngfdhndju449ptkdkd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAo6c-WwrCnkEpuW3Zwazr8PZ_73nWB6o4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "190939375367-r632se0ql401cjngfdhndju449ptkdkd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
