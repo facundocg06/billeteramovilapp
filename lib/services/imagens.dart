@@ -9,15 +9,16 @@ Future<XFile?> getImage() async {
 }
 
 final FirebaseStorage storage = FirebaseStorage.instance;
-Future<String?> uploadImage(File image, String name) async {
-  final String namefile = name; //image.path.split("/").last;
+Future<bool> uploadImage(File image, String name) async {
+  final String namefile = name;
+  //namefile.split("@").first;
   Reference ref = storage.ref().child("imgUsers").child(namefile);
   final UploadTask uploadTask = ref.putFile(image);
   final TaskSnapshot snapshot = await uploadTask.whenComplete(() => true);
   final String url = await snapshot.ref.getDownloadURL();
   if (snapshot.state == TaskState.success) {
-    return url;
+    return true;
   } else {
-    return null;
+    return false;
   }
 }

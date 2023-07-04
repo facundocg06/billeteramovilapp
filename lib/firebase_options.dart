@@ -47,7 +47,7 @@ class DefaultFirebaseOptions {
     apiKey: 'AIzaSyBJXUmZ6g5qVgzIh65d9mf4LPcHzFcpIJg',
     appId: '1:190939375367:web:acbef3b98ec523ad3387a2',
     messagingSenderId: '190939375367',
-    projectId: 'billeteramovilapp',
+    projectId: 'billeteramovilapp', 
     authDomain: 'billeteramovilapp.firebaseapp.com',
     storageBucket: 'billeteramovilapp.appspot.com',
     measurementId: 'G-WW90NRJ0LG',

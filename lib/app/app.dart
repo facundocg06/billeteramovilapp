@@ -11,7 +11,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       initialBinding: const AppBinding(),
-      initialRoute: RouteNames.home,
+      initialRoute: RouteNames.signIn,
       getPages: RoutePages.all,
     );
   }

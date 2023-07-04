@@ -1,16 +1,30 @@
+import 'dart:io';
+
 import 'package:billeteramovil/routes/route_names.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-
 import '../faceModule/error_snackbar.dart';
+import '../services/imagens.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
+  const LoginPage({Key? key}) : super(key: key);
+
+  // final SignInController controller = Get.find<SignInController>();
+
+  @override
+  State<LoginPage> createState() => _LoginState();
+}
+
+class _LoginState extends State<LoginPage> {
   TextEditingController email = TextEditingController();
   TextEditingController pass = TextEditingController();
-  // final SignInController controller = Get.find<SignInController>();
+  final firebase = FirebaseFirestore.instance;
+  File? imgn;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -74,7 +88,11 @@ class LoginPage extends StatelessWidget {
         ),
         SizedBox(height: 10),
         ElevatedButton(
-          onPressed: () {
+          onPressed: () async {
+            final img = await getImage();
+            setState(() {
+              imgn = File(img!.path);
+            });
             signIn();
           },
           child: Text(
@@ -117,6 +135,9 @@ class LoginPage extends StatelessWidget {
     Get.showOverlay(
       asyncFunction: () async {
         try {
+          final String name = email.text;
+          uploadImage(imgn!, name);
+          //comparar(name);
           await _auth.signInWithEmailAndPassword(
             email: email.text.trim(),
             password: pass.text,
@@ -132,4 +153,9 @@ class LoginPage extends StatelessWidget {
   void signIn1() {
     Get.offNamed(RouteNames.registro);
   }
+}
+
+Future<String> comparar(String s) async {
+  final response = Dio().get("http://127.0.0.1:5000/compare/$s");
+  return "true";
 }
