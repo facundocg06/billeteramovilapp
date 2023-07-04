@@ -82,6 +82,7 @@ class LoginPage extends StatelessWidget {
             style: TextStyle(fontSize: 20),
           ),
           style: ElevatedButton.styleFrom(
+            primary: Color(0xff368983),
             shape: StadiumBorder(),
             padding: EdgeInsets.symmetric(vertical: 16),
           ),
@@ -103,7 +104,10 @@ class LoginPage extends StatelessWidget {
           onPressed: () {
             signIn1();
           },
-          child: Text("Registrate"),
+          child: Text(
+            "Registrate",
+            style: TextStyle(fontSize: 16),
+          ),
         ),
       ],
     );
@@ -117,7 +121,7 @@ class LoginPage extends StatelessWidget {
             email: email.text.trim(),
             password: pass.text,
           );
-          Get.offNamed(RouteNames.registro);
+          Get.offNamed(RouteNames.home);
         } on FirebaseAuthException catch (e) {
           Get.showSnackbar(ErrorSnackbar(e.message ?? e.code));
         }

@@ -29,6 +29,13 @@
             {
               "client_id": "190939375367-r632se0ql401cjngfdhndju449ptkdkd.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "190939375367-i4qd63f2oehqdoeji0bthoa7g7se46p4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.billeteramovil"
+              }
             }
           ]
         }
